@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Movie Search</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <% if (user) { %>
+                    <li><a href="/playlist">My Playlist</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                    <li><a href="/create-playlist" class="create-playlist-link">Create Playlist</a></li> 
+                <% } else { %>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Movie Search</h2>
+            <form method="POST" action="/search">
+                <input type="text" name="searchQuery" placeholder="Search for a movie...">
+                <button type="submit">Search</button>
+            </form>
+            <% if (movies && movies.length > 0) { %>
+                <ul>
+                    <% movies.forEach(movie => { %>
+                        <li>
+                            <a href="/movie/<%= movie.imdbID %>"><%= movie.Title %></a>
+                        </li>
+                    <% }); %>
+                </ul>
+            <% } else { %>
+                <% if (typeof error !== 'undefined') { %>
+                    <p><%= error %></p>
+                <% } %>
+            <% } %>           
+        </section>
+    </main>
+</body>
+</html>

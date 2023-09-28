@@ -1,0 +1,91 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type="text"],
+input[type="password"],
+button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-top: 10px;
+}
+
+h2, h3 {
+    margin: 0;
+}
+/* styles.css */
+/* ... (your existing CSS code) */
+
+/* Style the "Create Playlist" link */
+.create-playlist-link {
+    background-color: #007bff; /* Blue color for the link */
+    color: white;
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+/* Hover effect for the link */
+.create-playlist-link:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+}
+
+/* ... (your existing CSS code) */

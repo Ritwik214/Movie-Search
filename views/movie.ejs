@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= movie.Title %></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1><%= movie.Title %></h1>
+        <a href="/">Home</a>
+        <% if (user) { %>
+            <a href="/playlist">Back to Playlist</a>
+        <% } %>
+    </header>
+    <main>
+        <div>
+            <img src="<%= movie.Poster %>" alt="<%= movie.Title %> Poster" />
+        </div>
+        <h2>Year: <%= movie.Year %></h2>
+        <h3>IMDB ID: <%= movie.imdbID %></h3>
+        <p><%= movie.Plot %></p>
+
+        <% if (user) { %>
+            <form method="POST" action="/add-to-playlist">
+                <input type="hidden" name="imdbID" value="<%= movie.imdbID %>">
+                <input type="hidden" name="Title" value="<%= movie.Title %>">
+                <button type="submit">Add to Playlist</button>
+            </form>
+        <% } else { %>
+            <p>Please <a href="/login">login</a> or <a href="/register">register</a> to add this movie to your playlist.</p>
+        <% } %>
+    </main>
+</body>
+</html>

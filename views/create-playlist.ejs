@@ -1,0 +1,24 @@
+<!-- create-playlist.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Playlist</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Create Playlist</h1>
+        <a href="/">Home</a>
+        <a href="/playlist">Back to Playlist</a>
+    </header>
+    <main>
+        <h2>Create a New Playlist</h2>
+        <form method="POST" action="/create-playlist">
+            <input type="text" name="playlistName" placeholder="Playlist Name" required>
+            <button type="submit">Create</button>
+        </form>
+    </main>
+</body>
+</html>

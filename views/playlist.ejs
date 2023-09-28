@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Playlist</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Playlist</h1>
+        <a href="/">Home</a>
+        <% if (user) { %>
+            <a href="/logout">Logout</a>
+        <% } else { %>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        <% } %>
+    </header>
+    <main>
+        <% if (user) { %>
+            <h2>Welcome, <%= user.username %>!</h2>
+            <h3>Your Playlist</h3>
+            <ul>
+                <% userPlaylist.forEach(movie => { %>
+                    <li><%= movie.Title %></li>
+                <% }); %>
+            </ul>
+            <form method="POST" action="/add-to-playlist">
+                <input type="text" name="imdbID" placeholder="IMDB ID">
+                <input type="text" name="Title" placeholder="Movie Title">
+                <button type="submit">Add to Playlist</button>
+            </form>
+        <% } else { %>
+            <h3>Please log in or register to create a playlist.</h3>
+        <% } %>
+    </main>
+</body>
+</html>
